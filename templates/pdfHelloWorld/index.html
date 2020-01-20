@@ -1,0 +1,37 @@
+
+{% block  body_block %}
+<html>
+<body>
+<h1> Hello World Reports Text To Speech!! </h1>
+<h2> Injected Content : {{ injectme }} </h2>
+	<br>
+	This is sample report for client XYZ. Index.html. Test
+	<br>
+
+    <h1> Hello World Reports Text To Speech!! </h1>
+	<br>
+	This is sample report for client XYZ.
+	<br>
+
+	<button type="submit" onclick="location.href='{% url 'downloadexcel' %}'" name='mybtn2'>Download Excel file</button>
+	<!--<form action="#" method="get">
+ <input type="text" value="8" name="mytextbox" size="1"/>
+ <input type="submit" class="btn" value="Click" name="mybtn">
+</form>
+ -->
+<br>
+	{% load static %}
+	<audio controls>
+  
+  <source src="{% static 'report.mp3' %}" type="audio/mpeg">
+</audio>
+
+	<div>
+        
+		<iframe src="{% static 'SampleReport.pdf' %}" style="width:100%;height:700px;"></iframe>
+	</div>
+	</body>
+</html>
+{% endblock  %}
+
+    
